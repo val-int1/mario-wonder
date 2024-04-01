@@ -4,11 +4,11 @@
 		<style>
 			html, body { margin: 0; }
 			body { background-color: #313338; }
-			div#wrapper { position: relative; width: fit-content; margin: 0 auto; }
+			div.wrapper { position: relative; width: fit-content; margin: 0 auto; }
 			img.add, span.linkbox { position: absolute; }
-			img#spoiler { left: 341px; top: 1754px; cursor: pointer; }
-			img#crabs { left: 340px; top: 146px; }
-			img#crabs.pointer { cursor: pointer; }
+			img.spoiler { left: 341px; top: 1754px; cursor: pointer; }
+			img.crabs { left: 340px; top: 146px; }
+			img.crabs.pointer, span.recursivelinkwow { cursor: pointer; }
 			span.attachment { left: 72px; width: 550px; }
 			.hidden { opacity: 0; }
 		</style>
@@ -20,13 +20,15 @@
 		<meta content="https://val-int1.github.io/mario-wonder/imgs/attachments/very_legit_screenshot.png" property="og:image" />
 		<meta name="twitter:card" content="summary_large_image">
 		<meta content="#FF0000" data-react-helmet="true" name="theme-color" />
+
+		<script src="script.js" defer></script>
 	</head>
 	<body>
-		<div id="wrapper">
+		<div class="wrapper">
 			<img id="base" src="imgs/base.png"></img>
 
-			<img class="add hidden" id="spoiler" src="imgs/spoiler.png"></img>
-			<img class="add hidden" id="crabs" src="imgs/crabs.png"></img>
+			<img class="add hidden spoiler" src="imgs/spoiler.png"></img>
+			<img class="add hidden crabs" src="imgs/crabs.png"></img>
 
 			<a href="mλrio-wonder_very_early_beta_0.0.1_DO_NOT_LEAK.love" target="_blank">
 				<span class="linkbox" style="left: 590px; top: 1757px; width: 213px; height: 17px;"></span>
@@ -35,6 +37,7 @@
 
 			<a href="imgs/attachments/very_legit_screenshot.png" target="_blank">
 				<span class="linkbox attachment" style="top: 259px; height: 309px;"></span>
+				<span class="linkbox" style="left: 88px; top: 3062px; width: 400px; height: 225px;"></span>
 			</a>
 
 			<a href="imgs/attachments/works_on_xp.png" target="_blank">
@@ -52,33 +55,9 @@
 			<a href="imgs/attachments/xz_repo_be_like.png" target="_blank">
 				<span class="linkbox attachment" style="top: 2588px; height: 191px;"></span>
 			</a>
+
+			<span class="linkbox recursivelinkwow" style="left: 71px; top: 2961px; width: 277px; height: 17px;"></span>
+			<span class="linkbox recursivelinkwow" style="left: 177px; top: 3001px; width: 177px; height: 16px;"></span>
 		</div>
-		<script>
-			function superSecretPasscode(e) {
-				if(e.key == passcode.substring(passcodeI, passcodeI + 1)) {
-					passcodeI ++;
-					if(passcodeI == passcode.length) {
-						crabs.classList.remove("hidden")
-						crabs.classList.add("pointer")
-						crabs.addEventListener("click", itsRavingTime)
-						document.body.removeEventListener("keydown", superSecretPasscode)
-					}
-				}
-			}
-
-			function itsRavingTime(e) { // and then they raved all over the place
-				window.open("https://www.youtube.com/watch?v=LDU_Txk06tM")
-				crabs.classList.remove("pointer")
-				crabs.removeEventListener("click", itsRavingTime)
-			}
-
-			const spoiler = document.getElementById("spoiler")
-			spoiler.addEventListener("click", () => { spoiler.classList.toggle("hidden") })
-
-			const crabs = document.getElementById("crabs")
-			const passcode = "ravetime"
-			let passcodeI = 0
-			document.body.addEventListener("keydown", superSecretPasscode)
-		</script>
 	</body>
 </html>
