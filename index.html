@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<style>
+			html, body { margin: 0; }
+			body { background-color: #313338; }
+			div#wrapper { position: relative; width: fit-content; margin: 0 auto; }
+			img.add, span.linkbox { position: absolute; }
+			img#spoiler { left: 341px; top: 1754px; cursor: pointer; }
+			img#crabs { left: 340px; top: 146px; }
+			img#crabs.pointer { cursor: pointer; }
+			span.attachment { left: 72px; width: 550px; }
+			.hidden { opacity: 0; }
+		</style>
+	</head>
+	<body>
+		<div id="wrapper">
+			<img id="base" src="imgs/base.png"></img>
+
+			<img class="add hidden" id="spoiler" src="imgs/spoiler.png"></img>
+			<img class="add hidden" id="crabs" src="imgs/crabs.png"></img>
+
+			<a href="mλrio-wonder_very_early_beta_0.0.1_DO_NOT_LEAK.love" target="_blank">
+				<span class="linkbox" style="left: 590px; top: 1757px; width: 213px; height: 17px;"></span>
+				<span class="linkbox" style="left: 71px; top: 1779px; width: 354px; height: 17px;"></span>
+			</a>
+
+			<a href="imgs/attachments/very_legit_screenshot.png" target="_blank">
+				<span class="linkbox attachment" style="top: 259px; height: 309px;"></span>
+			</a>
+
+			<a href="imgs/attachments/works_on_xp.png" target="_blank">
+				<span class="linkbox attachment" style="top: 844px; height: 333px;"></span>
+			</a>
+
+			<a href="imgs/attachments/commits_do_be_committing.png" target="_blank">
+				<span class="linkbox attachment" style="top: 1912px; height: 261px;"></span>
+			</a>
+
+			<a href="imgs/attachments/c_and_d.png" target="_blank">
+				<span class="linkbox attachment" style="top: 2245px; height: 310px;"></span>
+			</a>
+
+			<a href="imgs/attachments/xz_repo_be_like.png" target="_blank">
+				<span class="linkbox attachment" style="top: 2588px; height: 191px;"></span>
+			</a>
+		</div>
+		<script>
+			function superSecretPasscode(e) {
+				if(e.key == passcode.substring(passcodeI, passcodeI + 1)) {
+					passcodeI ++;
+					if(passcodeI == passcode.length) {
+						crabs.classList.remove("hidden")
+						crabs.classList.add("pointer")
+						crabs.addEventListener("click", itsRavingTime)
+						document.body.removeEventListener("keydown", superSecretPasscode)
+					}
+				}
+			}
+
+			function itsRavingTime(e) { // and then they raved all over the place
+				window.open("https://www.youtube.com/watch?v=LDU_Txk06tM")
+				crabs.classList.remove("pointer")
+				crabs.removeEventListener("click", itsRavingTime)
+			}
+
+			const spoiler = document.getElementById("spoiler")
+			spoiler.addEventListener("click", () => { spoiler.classList.toggle("hidden") })
+
+			const crabs = document.getElementById("crabs")
+			const passcode = "ravetime"
+			let passcodeI = 0
+			document.body.addEventListener("keydown", superSecretPasscode)
+		</script>
+	</body>
+</html>
